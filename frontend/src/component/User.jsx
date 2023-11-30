@@ -10,7 +10,6 @@ export default function Users(){
         age: 21,
     }])
     return(
-
         <div className="table-1">
             <div className="w-50 bg-white rounded p-3">
             <Link to="/create" className="btn btn-success">ADD</Link>
