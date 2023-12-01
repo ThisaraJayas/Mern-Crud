@@ -16,7 +16,6 @@ export default function Users(){
             <div className="w-50 bg-white rounded p-3">
             <Link to="/create" className="btn btn-success">ADD</Link>
             <table class="table table-dark table-striped">
-                
                 <thead>
                     <tr>
                         <th>Name</th>
@@ -33,7 +32,7 @@ export default function Users(){
                             <td>{user.email}</td>
                             <td>{user.age}</td>
                             <td>
-                                <Link to="/update" className="btn btn-success">Update</Link>
+                                { <Link to={`/update/${user._id}`} className="btn btn-success">Update</Link> }
                                 <button>Delete</button>
                             </td>
                         </tr>
@@ -43,6 +42,5 @@ export default function Users(){
             </table>
             </div>
         </div>
-        
     )
 }
