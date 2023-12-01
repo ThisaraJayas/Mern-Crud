@@ -15,6 +15,7 @@ const connection = mongoose.connection
 connection.once("open",()=>{
     console.log('connection success!');
 })
+
 const userRouter = require('./routes/users.js')
 app.use("/", userRouter)
 
