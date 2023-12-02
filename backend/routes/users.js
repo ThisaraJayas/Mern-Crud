@@ -27,35 +27,26 @@ router.route("/").get((req,res)=>{
         console.log(err);
     })
 })
+
+//get Data to update section to update
 router.route("/getUser/:id").get((req,res)=>{
     const id = req.params.id
-    User.find({_id: id}).then((users)=>{
+    User.findById(id).then((users)=>{
         res.json(users)
     }).catch((err)=>{
         console.log(err);
     })
 })
-//update
-// router.route("/getUser/:id").put((req,res)=>{
-//     const id = req.params.id
-//     const{name,email,age} =req.body
-//     User.findById({_id: id})
-//     .then(users=>res.json(users))
-//     .catch(err=>res.json(err))
-// })
-router.route("/update/:id").put((req,res)=>{
+
+//update got data
+router.route("/updateUser/:id").put((req,res)=>{
     const userid =req.params.id
-    const{name,email,age} =req.body
-    const updateStudent={
-        name,
-        email,
-        age
-    }
-    const update = User.findByIdAndUpdate(userid, updateStudent)
-    .then(()=>{
-        console.log('user updated')
-    }).catch((err)=>{
-        console.log(err);
-    })
+    User.findByIdAndUpdate({_id:userid},{
+        name: req.body.name,
+        email: req.body.email,
+        age: req.body.age
+    }).then(users=>res.json(users))
+    .catch(err=>res.json(err))
+   
 })
 module.exports=router

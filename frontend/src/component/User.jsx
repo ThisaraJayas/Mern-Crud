@@ -7,7 +7,7 @@ import axios from "axios";
 export default function Users(){
     const[Users, setUsers] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:8081')
+        axios.get('http://localhost:8081/')
         .then(result=>setUsers(result.data))
         .catch(err=>console.log(err))
     },[])

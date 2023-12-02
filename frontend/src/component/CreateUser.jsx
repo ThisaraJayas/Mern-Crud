@@ -2,11 +2,13 @@ import React from "react";
 import {useState} from "react";
 import '../CSS/User.css'
 import axios from 'axios'
+import { useNavigate } from "react-router-dom";
 
 export default function CreateUsers() {
     const [name, setName] = useState()
     const [email, setEmail] = useState()
     const [age, setAge] = useState()
+    const navigate = useNavigate()
 const Submit = (e)=>{
     e.preventDefault()
     const newUser ={
@@ -15,7 +17,7 @@ const Submit = (e)=>{
         email
     }
     axios.post("http://localhost:8081/create", newUser).then(()=>{
-        alert("student added")
+        navigate('/')
     })
     .catch((err)=>{
         alert(err)
