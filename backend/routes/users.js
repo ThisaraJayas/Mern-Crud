@@ -57,4 +57,5 @@ router.route("/deleteUser/:id").delete((req,res)=>{
     .then(res=>res.json(res))
     .catch(err=>res.json(err))
 })
+
 module.exports=router
