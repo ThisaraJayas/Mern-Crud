@@ -60,7 +60,7 @@ console.log(age);
                value={age} onChange={(e)=>setAge(e.target.value)} />
             </div>
             <div class="col-12 d-flex justify-content-end">
-                <button class="btn btn-primary" type="submit">ADD</button>
+                <button class="btn btn-primary" type="submit">Update</button>
             </div>
             </form>
             </div>
